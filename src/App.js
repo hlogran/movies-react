@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout } from "antd";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import MenuTop from "./components/MenuTop";
 
 //pages
 import Home from "./pages/home";
@@ -15,9 +16,11 @@ function App() {
 
   return (
     <Layout>
-      <Header>Header....</Header>
-      <Content>
-        <Router>
+      <Router>
+        <Header>
+          <MenuTop />
+        </Header>
+        <Content>
           <Switch>
             <Route path="/" exact={true}>
               <Home />
@@ -39,8 +42,8 @@ function App() {
               <Error404 />
             </Route>
           </Switch>
-        </Router>
-      </Content>
+        </Content>
+      </Router>
     </Layout>
   );
 }
