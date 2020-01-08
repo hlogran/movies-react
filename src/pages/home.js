@@ -1,6 +1,7 @@
 import React from "react";
 import SliderMovies from "../components/SliderMovies";
 import MovieList from "../components/MovieList";
+import Footer from "../components/Footer";
 import useFetch from "../hooks/useFetch";
 import {Col, Row} from "antd"
 import { API_URL, API_TOKEN } from "../utils/constants";
@@ -16,6 +17,7 @@ export default function Home() {
         <Col span={12}><MovieList movies={popularMovies} title="Popular Movies"/></Col>
         <Col span={12}><MovieList movies={topRatedMovies} title="Top Rated Movies"/></Col>
       </Row>
+      <Footer/>
     </div>
   );
 }
