@@ -1,0 +1,11 @@
+.movie-catalog {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+
+  .ant-card-cover {
+    img {
+      height: 350px;
+    }
+  }
+}

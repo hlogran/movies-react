@@ -3,7 +3,8 @@ import { Row, Col } from "antd";
 import { API_URL, API_TOKEN } from "../utils/constants";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
-import MovieList from "../components/MovieList";
+import MovieCatalog from "../components/MovieCatalog";
+import Pagination from "../components/Pagination";
 
 export default function NewMovies() {
   const [moviesList, setMoviesList] = useState([]);
@@ -19,13 +20,33 @@ export default function NewMovies() {
     })();
   }, [page]);
 
+  const onChangePage = page => {
+    setPage(page);
+  };
+
   return (
     <Row>
       <Col span={24} style={{ textAlign: "center", marginTop: "25px" }}>
         <h1 style={{ fontSize: "35px", fontWeight: "bold" }}>Now Playing</h1>
       </Col>
-      <Col span={24}>{moviesList.results ? "The movies..." : <Loading />}</Col>
-
+      {moviesList.results ? (
+        <Row>
+          <Col span={24}>
+            <MovieCatalog movies={moviesList.results} />
+          </Col>
+          <Col span={24}>
+            <Pagination
+              currentPage={moviesList.page}
+              totalItems={moviesList.total_results}
+              onChangePage={onChangePage}
+            />
+          </Col>
+        </Row>
+      ) : (
+        <Col span={24}>
+          <Loading />
+        </Col>
+      )}
       <Col span={24}>
         <Footer />
       </Col>
