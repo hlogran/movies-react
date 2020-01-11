@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./styles.scss";
 
-export default function MovieCataog(props) {
+export default function MovieCatalog(props) {
   const { movies } = props;
 
   return movies.map(movie => (
