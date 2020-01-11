@@ -5,8 +5,7 @@ import MenuTop from "./components/MenuTop";
 
 //pages
 import Home from "./pages/home";
-import NewMovies from "./pages/new-movies";
-import Popular from "./pages/popular";
+import MoviesIndex from "./pages/movies-index";
 import Search from "./pages/search";
 import Error404 from "./pages/error404";
 import Movie from "./pages/movie";
@@ -26,10 +25,10 @@ function App() {
               <Home />
             </Route>
             <Route path="/new-movies" exact={true}>
-              <NewMovies />
+              <MoviesIndex title={"New Movies"} apiResource="now_playing" />
             </Route>
             <Route path="/popular" exact={true}>
-              <Popular />
+              <MoviesIndex title={"Popular Movies"} apiResource="popular" />
             </Route>
             <Route path="/search" exact={true}>
               <Search />
