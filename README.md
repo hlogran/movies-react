@@ -3,7 +3,7 @@
 A sample project to show the use of React, Hooks and Ant Design
 
 ## Technologies used
-- Reacj
+- React
 - React Router
 - React Hooks (useFetch, useState)
 - Ant Design
