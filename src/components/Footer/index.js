@@ -4,10 +4,10 @@ import { Layout } from "antd";
 import "./styles.scss";
 
 export default function Footer() {
-  const {Footer} = Layout;
+  const { Footer } = Layout;
   return (
     <Footer className="footer">
-      <p>Hernan Logran</p>
+      <p>Hernan Logran's Demo Project</p>
     </Footer>
   );
 }
