@@ -18,7 +18,7 @@ function Search(props) {
       const searchValue = queryString.parseUrl(location.search);
       const { s } = searchValue.query;
       const response = await fetch(
-        `${API_URL}/3/search/movie?api_key=${API_TOKEN}&language=es-ES&query=${s}&page=1`
+        `${API_URL}/3/search/movie?api_key=${API_TOKEN}&language=en-US&query=${s}&page=1`
       );
       const movies = await response.json();
 
